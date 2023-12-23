@@ -14,7 +14,10 @@ console.log(null>'1');
 // There is difference between == nad relation operater >,<,<=,>=
 
 
+// Stack and Heap memory
+// Link for pictorial understang of stack and heap
 
+// https://excalidraw.com/#json=GkKGeNEsMXp7YNHBkHgyh,vRADW6EanyF3gkjuT0qRTw
 
 
 
