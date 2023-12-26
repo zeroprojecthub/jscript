@@ -55,10 +55,10 @@ function handleObject(anyobject){
 
 // handleObject(user);
 
-handleObject({
-    username: "sam",
-    price: 399
-});
+// handleObject({
+//     username: "sam",
+//     price: 399
+// });
 
 
 const myNewArray = [200, 400, 100, 600]
@@ -69,4 +69,62 @@ function returnSecondValue(getArray){
 
 // console.log(returnSecondValue(myNewArray));
 
-console.log(returnSecondValue([200, 400, 500, 1000]));
+// console.log(returnSecondValue([200, 400, 500, 1000]));
+
+/*    function scope   */
+
+//var c = 300
+// let a = 300
+// if (true) {
+//     let a = 10
+//     const b = 20
+//     console.log("INNER: ", a);
+    
+// }
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+
+
+function one(){
+    const username = "karan"
+
+    function two(){
+        const website = "youtube"
+        console.log(username);
+    }
+    // console.log(website);
+     two()
+}
+// one()
+
+
+
+// if (true) {
+//     const username = "kishan"
+//     if (username === "keyur") {
+//         const website = " youtube"
+//         console.log(username + website);
+//     }
+//     // console.log(website);
+// }
+
+// console.log(username);
+
+
+/*   ---------------------------------  */
+console.log(addone(33));
+function addone(n)
+{
+    return n+1
+}
+
+// console.log(addtwo(22));
+
+const addtwo=function(num){
+    return num+2
+}
+
+
