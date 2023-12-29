@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+
+  let ul=document.querySelector('ul');
+        
+    function addlanguage(name) {
+        console.log(name);
+        let li = document.createElement('li');
+        li.innerText=`${name}`
+        ul.appendChild(li);
+    }
+
+    addlanguage("java");
+    addlanguage("C#")
+function addoptionlanguage(name)
+{
+    let li = document.createElement('li');
+    li.appendChild(document.createTextNode(name));
+    ul.appendChild(li);
+}
+
+// addoptionlanguage("java");
+
+//edit
+
+let slang = document.querySelector('li:nth-child(2)');
+// slang.innerText="Mojo";
+// console.log(slang);
+
+// let newli = document.createElement('li');
+// newli.textContent="Golang";
+// slang.replaceWith(newli);
+
+let fele = document.querySelector('li:first-child');
+fele.outerHTML='<li>typescript</li>'
+// remove
+
+let lchild = document.querySelector('li:last-child');
+lchild.remove();
+</script>
+</html>
