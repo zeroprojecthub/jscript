@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<style type="text/css">
+			*
+			{
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+				text-align: center;
+			}
+			.container
+			{
+				height: 340px;
+				width: 340px;
+				margin: auto;
+				margin-top: 60px;
+				border-radius: 10px;
+				background-color: #2e2215;
+				border: 10px solid #2e2215;
+			}
+			.box1
+			{
+				height: 100px;
+				width: 100px;
+				margin-top: 4px;
+				background-color: #cf8832;
+				color: #63341a;
+				border: none;
+				font-size: 30px;
+				font-weight: 600;
+				border-radius: 10px;
+				box-shadow: inset 3px 3px 10px #f4e6c6 , inset -3px -3px 10px #432800;
+				background-image: url(1.jpg);
+			}
+			#box8
+			{
+				background-color: #72351e;
+				background-image: none;
+				box-shadow: none;
+			}
+		</style>
+		<script type="text/javascript">
+			a = [8] , move=0;
+
+			function plzzle(p)
+			{
+				var c = document.getElementById('click');
+
+				c.play();
+				for(i=0 ; i<9 ; i++)
+				{
+					a[i] = document.getElementById('box'+i).value;
+				}
+				if(a[3] != ' ' && a[6] != ' ')
+				{
+					repl(a[p] , a[p+1] , p , p+1);
+				}
+				if(a[5] != ' ' && a[2] != ' ')
+				{
+					repl(a[p] , a[p-1] , p , p-1);
+				}
+				repl(a[p] , a[p+3] , p , p+3);
+				repl(a[p] , a[p-3] , p , p-3);
+				win();
+			}
+
+			function repl(fistnum,secnum,currval,nextval)
+			{
+					if(secnum == ' ')
+					{
+						move++;
+
+						document.getElementById('box'+nextval).value = document.getElementById('box'+currval).value;
+						document.getElementById('box'+currval).value = ' ';
+						document.getElementById('box'+nextval).style.backgroundImage = 'url(1.jpg)';
+						document.getElementById('box'+currval).style.backgroundImage = 'none';
+						document.getElementById('box'+currval).style.backgroundColor = '#72351e';
+						document.getElementById('box'+currval).style.boxShadow = 'none';
+						document.getElementById('box'+nextval).style.boxShadow = 'inset 3px 3px 10px #f4e6c6 , inset -3px -3px 10px #432800';
+					}
+				console.log(move);
+
+			}
+
+			function win()
+			{
+				if(a[0]==1 && a[1]==2 && a[2]==3 && a[3]==4 && a[4]==5 && a[5]==6 && a[6]==7 && a[7]==8 && a[8]==' ')
+					{
+						alert('win');
+					}
+			}
+
+		</script>
+	</head>
+	<body>
+		<audio id="click">
+			<source src="image.wav" type="audio/wav">
+		</audio>
+		<div class="container">
+			<input type="button" name="" id="box0" class="box1" onclick="plzzle(0)" value="7"> 
+			<input type="button" name="" id="box1" class="box1" onclick="plzzle(1)" value="5"> 
+			<input type="button" name="" id="box2" class="box1" onclick="plzzle(2)" value="1"><br>
+			<input type="button" name="" id="box3" class="box1" onclick="plzzle(3)" value="3">
+			<input type="button" name="" id="box4" class="box1" onclick="plzzle(4)" value="6">
+			<input type="button" name="" id="box5" class="box1" onclick="plzzle(5)" value="2"><br>
+			<input type="button" name="" id="box6" class="box1" onclick="plzzle(6)" value="8">
+			<input type="button" name="" id="box7" class="box1" onclick="plzzle(7)" value="4">
+			<input type="button" name="" id="box8" class="box1" onclick="plzzle(8)" value=" ">
+		</div>
+			
+	</body>
+</html>
